@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <!-- Show a splash screen on the activity. Automatically removed when
+             Flutter draws its first frame -->
+        <item name="android:windowBackground">@drawable/launch_background</item>
+    </style>
+    <!-- Base application theme. -->
+    <style name="BtrImTheme" parent="AppTheme.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="actionBarSize">44dp</item>
+        <item name="colorPrimary">#3D7EFF</item>
+        <item name="colorPrimaryDark">#3D7EFF</item>
+        <item name="buttonColor">#3D7EFF</item>
+        <item name="colorAccent">#3D7EFF</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="evaluateButtonTextColor">#1a3D7EFF</item>
+    </style>
+</resources>

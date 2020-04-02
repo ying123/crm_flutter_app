@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.008816">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: echo '打包'
+        cd ../../
+        pwd
+        flutter pub get
+        flutter clean
+        flutter build apk --release" time="176.11254">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>

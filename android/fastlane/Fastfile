@@ -1,0 +1,46 @@
+
+
+default_platform(:android)
+
+platform :android do
+
+  desc "Jenkins打包、上传蒲公英-内测版"
+  lane :jenkinsBuildUploadPgy do |options|
+    #gradle(task: "clean assembleRelease") 
+   
+    sh "echo '打包'
+        cd ../../
+        pwd
+        flutter pub get
+        flutter clean
+        flutter build apk --release"
+
+    sh "echo '上传'
+        cd ../../
+        pwd
+        upload_dir='./build/app//outputs/apk/release'
+        User_key='0a8584a374c7e882282863c2e40e058b'
+        Api_key='f0c7ee44f580b128bcdb71cef6beb82b'
+	      desc='#{options[:desc]}'
+        upload_file=`ls ${upload_dir} |grep .apk`
+        curl -F \"file=@${upload_dir}/${upload_file}\" -F \"uKey=${User_key}\" -F \"_api_key=${Api_key}\" -F \"updateDescription=${desc}\" https://qiniu-storage.pgyer.com/apiv1/app/upload
+        echo -e '\n\n蒲公英下载地址 ：http://www.pgyer.com/crm-app-android-test\n\n'"
+
+    # You can also use other beta testing services here
+
+	
+  end
+
+    lane :BuildApk do |options|
+    #gradle(task: "clean assembleRelease") 
+   
+    sh "echo '打包'
+        cd ../../
+        pwd
+        flutter pub get
+        flutter clean
+        flutter build apk --release"
+  end
+
+ 
+end

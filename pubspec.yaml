@@ -1,0 +1,116 @@
+name: crm_flutter_app
+description: A new Flutter project.
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 2.0.7+10039
+
+environment:
+  sdk: '>=2.2.2 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  flutter_cupertino_localizations: ^1.0.1
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^0.1.2
+  dio: ^2.1.7
+  json_annotation: ^2.4.0
+  shared_preferences: ^0.5.1
+  json_serializable: ^3.0.0
+  build_runner: ^1.6.1
+  connectivity: ^0.4.3+6
+  flutter_screenutil: ^0.5.3
+  webview_flutter: ^0.3.10+4
+  webview:
+    git:
+      url: git@gitlab.qipeipu.net:jiangqian/btl-flutter-package-webview.git
+      path: webview
+      ref: 2e1b5192955bfc3ec4033cbd8fa8142ff7789177
+  save_image:
+    git:
+      url: git@gitlab.qipeipu.net:btr-flutter-package/btl-flutter-package-saveimage.git
+      path: save_image
+  flutter_widget_from_html: ^0.2.2
+  provider: ^3.0.0+1
+  multi_image_picker: ^4.3.6
+  pull_to_refresh: ^1.5.2
+  qr_flutter: ^2.1.0+55
+  fluttertoast: ^3.1.0
+  bot_toast: ^1.1.1
+  intl: ^0.15.8
+  mta:
+    git:
+      url: git@gitlab.qipeipu.net:btr-flutter-package/btl-flutter-package-mta.git
+      path: mta
+      ref: d414618e343f84042b1a750558e50b2600bc3e07
+  fluwx: ^1.0.4
+  photo_view: ^0.4.2
+  package_info: ^0.4.0+6
+  city_pickers: ^0.1.23
+  url_launcher: ^5.1.2
+  android_intent: ^0.3.3
+  month_picker_dialog: ^0.2.0
+  update_app:
+    git:
+      url: git@gitlab.qipeipu.net:btr-flutter-package/btl-flutter-package-updateApp.git
+      path: update_app
+      ref: 88d5e3baf8b111e26c3391abd5e800bedde64d56
+  sentry: any
+  charts_flutter: ^0.8.1
+  xiaobaim:
+    git:
+      url: git@gitlab.qipeipu.net:btr-flutter-package/btl-flutter-package-xiaobaim.git
+      path: xiaobaim
+      ref: efb7dc6add84adec322bd135373cc4d0419b9ec3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/
+    - assets/images/2.0x/
+    - assets/images/3.0x/
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  fonts:
+    - family: CRMIcons
+      fonts:
+        - asset: assets/fonts/iconfont.ttf
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages

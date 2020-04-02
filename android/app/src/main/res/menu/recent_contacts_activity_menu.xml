@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/search_btn"
+        android:icon="@mipmap/search_text"
+        android:title="搜索"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/question_btn"
+        android:icon="@mipmap/platform_cs_text"
+        android:title="平台客服"
+        app:showAsAction="always"/>
+</menu>

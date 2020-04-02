@@ -1,0 +1,54 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Push a new release build to the App Store"
+  lane :release do
+    build_app(workspace: "Runner.xcworkspace", scheme: "Runner")
+    upload_to_app_store(skip_metadata: true, skip_screenshots: true)
+  end
+end
+
+
+
+#命令示范
+#fastlane jenkinsBuildUploadPgy desc:测试新脚本打包
+  desc "Jenkins打包、上传蒲公英-内测版"
+  lane :jenkinsBuildUploadPgy do |options|
+    time = Time.new
+    time_str = time.strftime("%Y%m%d")
+    current_path = File.expand_path("..")
+    out_put_path = current_path + time.strftime("%Y%m%d%H%M")
+    Dir.chdir('../Pods') do
+    gym(
+    clean:true, #打包前clean项目
+     export_options: {
+    xcargs: "-UseModernBuildSystem=NO",
+    method: "ad-hoc",
+    iCloudContainerEnvironment: 'Development' #Development, Production.
+  },
+    export_method: "ad-hoc", #导出方式
+    scheme:"Runner", #scheme
+    configuration: "Release",#环境
+    output_directory:"./app",#ipa的存放目录
+    export_xcargs: "-allowProvisioningUpdates",
+    output_name: "CRM" + "-" + time.strftime("%Y%m%d") + "-ad-hoc"#输出ipa的文件名
+    )
+end
+  #蒲公英的配置 替换为自己的api_key和user_key
+  pgyer(api_key: "f0c7ee44f580b128bcdb71cef6beb82b", user_key: "0a8584a374c7e882282863c2e40e058b",update_description: options[:desc])
+  end
